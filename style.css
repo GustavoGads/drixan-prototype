@@ -41,9 +41,6 @@ main {
     gap: 32px;
 
     justify-content: center;
-
-    animation-duration: 1s;
-    animation-name: slidein;
 }
 
 
@@ -141,6 +138,7 @@ footer {
 }
 
 
+
 footer img {
     animation-name: shake;
     animation-delay: 5s;
@@ -148,6 +146,11 @@ footer img {
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: 4;
+}
+
+main, footer {
+    animation-duration: 1s;
+    animation-name: slidein;
 }
 
 @keyframes shake {
