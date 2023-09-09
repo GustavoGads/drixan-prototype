@@ -3,22 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 
-    color: white;
+    color: #F2F2F2;
     font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --blue: 214;
+    --green: 112;
+    --hsl: var(--blue);
+    --secondary-color: hsl(var(--hsl), 36%, 48%);
+    --shadow-color: #0D0D0D;
 }
 
 body {
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.115)), url(./assets/bg-img.jpg);
+    background-image:linear-gradient(rgba(113, 205, 180, 0.32), rgb(14, 53, 126)), url(./assets/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(2px) grayscale(15%) contrast(70%);
 
 }
 
-body h1, p, li {
-    text-shadow: black 2px 2px 5px;
+body h2, p, li, button {
+    text-shadow: var(--shadow-color) 2px 2px 5px;
 }
 
 main {
@@ -32,6 +40,9 @@ main {
     gap: 32px;
 
     justify-content: center;
+
+    animation-duration: 1s;
+    animation-name: slidein;
 }
 
 header {
@@ -40,6 +51,10 @@ header {
     gap: 10px;
 
     align-items: center;
+}
+
+header h2 {
+    color: var(--secondary-color);
 }
 
 header div {
@@ -56,7 +71,7 @@ header div {
     object-fit: cover;
     
     border-radius: 50%;
-    filter: drop-shadow(rgba(0, 0, 0, 0.539) 5px 5px 10px);
+    filter: drop-shadow(var(--shadow-color) 5px 5px 10px);
 }
 
 .logo p {
@@ -70,7 +85,7 @@ header div {
 .logo img {
     height: 18px;
 
-    filter: drop-shadow(2px 2px 5px );
+    filter: drop-shadow(var(--secondary-color) 2px 2px 5px );
 }
 
 section {
@@ -84,6 +99,10 @@ section ul {
     gap: 10px;
 }
 
+section li::marker {
+    color: var(--secondary-color);
+}
+
 .net-icons {
     display: flex;
     justify-content: space-evenly;
@@ -94,7 +113,7 @@ section ul {
     width: 50px;
     height: 50px;
 
-    background-color: rgba(0, 0, 0, 0.539);
+    background-color: var(--secondary-color);
     border-radius: 50%;
     padding: 10px;
 }
@@ -116,12 +135,22 @@ button {
 
     min-width: 192px;
 
-    background-color: rgba(0, 0, 0, 0.539);
+    background-color: var(--secondary-color);
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0;
+    }
 }
 
 @media(min-width: 440px ) {
