@@ -22,7 +22,7 @@ body h1, p, li {
 }
 
 main {
-    width: 414px;
+    width: 100%;
     height: 100%;
 
     margin: 0 auto;
@@ -122,4 +122,10 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+@media(min-width: 720px ) {
+    main {
+        width: 414px;
+    }
 }
