@@ -124,7 +124,7 @@ button {
     gap: 10px;
 }
 
-@media(min-width: 720px ) {
+@media(min-width: 440px ) {
     main {
         width: 414px;
     }
