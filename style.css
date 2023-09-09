@@ -27,7 +27,7 @@ body {
     grid-template-rows: 1fr;
 }
 
-body h2, p, li, button {
+body h2, p, li, footer {
     text-shadow: var(--shadow-color) 2px 2px 5px;
 }
 
