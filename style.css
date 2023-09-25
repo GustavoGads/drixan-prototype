@@ -25,6 +25,9 @@ body {
 
     display: grid;
     grid-template-rows: 1fr;
+
+    animation-name: opacity;
+    animation-duration: 1.5s;
 }
 
 body h2, p, li, footer {
@@ -122,6 +125,7 @@ section li::marker {
 
 .net-icons img:hover {
     filter: drop-shadow(black 2px 2px 2px );
+    filter: opacity(0.8);
 }
 
 footer {
@@ -140,39 +144,35 @@ footer {
 
 
 footer img {
-    animation-name: shake;
-    animation-delay: 5s;
+    animation-name: slide;
     animation-duration: 1s;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 4s;
     animation-iteration-count: 4;
+    animation-direction: alternate-reverse;
 }
 
-main, footer {
-    animation-duration: 1s;
-    animation-name: slidein;
-}
-
-@keyframes shake {
+@keyframes slide {
     0% {
-        margin-bottom: 8px;
+        transform: translateY(8px);
     }
 
-    
     100% {
-        margin: 0;
+        transform: translateY(0);
     }
 }
 
-@keyframes slidein {
-    from {
-        margin-top: 100%;
+@keyframes opacity {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
     }
 
-    to {
-        margin-top: 0;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
-}
+} 
 
 @media(min-width: 440px ) {
     main {
